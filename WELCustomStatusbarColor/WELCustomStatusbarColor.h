@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface WELStatusbarIconColor : NSObject
+@interface WELCustomStatusbarColor : NSObject
 
 + (void)updateStatusbarIconColor:(UIColor *)color;
 

@@ -13,7 +13,7 @@
 		2DEB66171F15CA8700F2B477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB66151F15CA8700F2B477 /* Main.storyboard */; };
 		2DEB66191F15CA8700F2B477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB66181F15CA8700F2B477 /* Assets.xcassets */; };
 		2DEB661C1F15CA8700F2B477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB661A1F15CA8700F2B477 /* LaunchScreen.storyboard */; };
-		2DEB66261F15CB4F00F2B477 /* WELCustomStatusbarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB66251F15CB4F00F2B477 /* WELCustomStatusbarColor.m */; };
+		2DEB662A1F15F85700F2B477 /* WELCustomStatusbarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		2DEB66181F15CA8700F2B477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DEB661B1F15CA8700F2B477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DEB661D1F15CA8700F2B477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DEB66241F15CB4F00F2B477 /* WELCustomStatusbarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WELCustomStatusbarColor.h; sourceTree = "<group>"; };
-		2DEB66251F15CB4F00F2B477 /* WELCustomStatusbarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WELCustomStatusbarColor.m; sourceTree = "<group>"; };
+		2DEB66281F15F85700F2B477 /* WELCustomStatusbarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WELCustomStatusbarColor.h; sourceTree = "<group>"; };
+		2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WELCustomStatusbarColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		2DEB660B1F15CA8700F2B477 /* WELCustomStatusbarColorDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2DEB66231F15CB4F00F2B477 /* WELCustomStatusbarColor */,
+				2DEB66271F15F85700F2B477 /* WELCustomStatusbarColor */,
 				2DEB660F1F15CA8700F2B477 /* AppDelegate.h */,
 				2DEB66101F15CA8700F2B477 /* AppDelegate.m */,
 				2DEB66121F15CA8700F2B477 /* ViewController.h */,
@@ -83,11 +83,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2DEB66231F15CB4F00F2B477 /* WELCustomStatusbarColor */ = {
+		2DEB66271F15F85700F2B477 /* WELCustomStatusbarColor */ = {
 			isa = PBXGroup;
 			children = (
-				2DEB66241F15CB4F00F2B477 /* WELCustomStatusbarColor.h */,
-				2DEB66251F15CB4F00F2B477 /* WELCustomStatusbarColor.m */,
+				2DEB66281F15F85700F2B477 /* WELCustomStatusbarColor.h */,
+				2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */,
 			);
 			path = WELCustomStatusbarColor;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 				2DEB66141F15CA8700F2B477 /* ViewController.m in Sources */,
 				2DEB66111F15CA8700F2B477 /* AppDelegate.m in Sources */,
 				2DEB660E1F15CA8700F2B477 /* main.m in Sources */,
-				2DEB66261F15CB4F00F2B477 /* WELCustomStatusbarColor.m in Sources */,
+				2DEB662A1F15F85700F2B477 /* WELCustomStatusbarColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
