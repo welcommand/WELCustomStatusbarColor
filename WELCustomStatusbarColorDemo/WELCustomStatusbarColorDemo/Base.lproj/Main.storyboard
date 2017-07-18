@@ -26,19 +26,24 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="BUH-VY-TSg"/>
                                 </constraints>
-                                <state key="normal" title="Change Color"/>
+                                <state key="normal" title="Change Color">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46e-1P-fBb"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eeY-v6-VV4" secondAttribute="trailing" constant="40" id="iaI-AD-BR8"/>
                             <constraint firstItem="eeY-v6-VV4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="pcT-ba-ycU"/>
                             <constraint firstItem="eeY-v6-VV4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="wnP-LK-FFc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changeColorBtn" destination="eeY-v6-VV4" id="fb6-qz-olF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
