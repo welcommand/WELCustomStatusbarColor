@@ -18,6 +18,48 @@ _Pragma("clang diagnostic pop") \
 } while (0)
 
 
+UIStatusBarStyle wel_preferredStatusBarStyle(id self, SEL _cmd) {
+    NSInteger style = [objc_getAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle") integerValue];
+    
+    objc_setAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle", @(!style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    return  style ? 1: 0;
+}
+
+UIViewController* wel_childViewControllerForStatusBarStyle(id self, SEL _cmd)  {
+    return [self performSelector:@selector(topViewController)];
+}
+
+__attribute__((constructor))
+static void resetPreferredStatusBarStyle(void) {
+    
+    [[NSBundle mainBundle].infoDictionary setValue:@"YES" forKey:@"UIViewControllerBasedStatusBarAppearance"];
+    
+    int numClasses;
+    Class *classes = NULL;
+    numClasses = objc_getClassList(NULL,0);
+    
+    if (numClasses >0 )
+    {
+        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+        numClasses = objc_getClassList(classes, numClasses);
+        for (int i = 0; i < numClasses; i++) {
+            if (class_getSuperclass(classes[i]) == [UINavigationController class]){
+                Method tm = class_getInstanceMethod(classes[i], @selector(childViewControllerForStatusBarStyle));
+                if (tm) {
+                    method_setImplementation(tm, (IMP)wel_childViewControllerForStatusBarStyle);
+                }
+            } else if ([UIViewController class]) {
+                Method tm = class_getInstanceMethod(classes[i], @selector(preferredStatusBarStyle));
+                if (tm) {
+                    method_setImplementation(tm, (IMP)wel_preferredStatusBarStyle);
+                }
+            }
+        }
+        free(classes);
+    }
+}
+
 @interface UIImage (WELStatusbarIconColor)
 
 - (UIImage *)wel_imageWithColor:(UIColor *)color;
@@ -80,7 +122,7 @@ UIColor* wel_tintColor(id self, SEL _cmd) {
         return color;
     }
     WELSuppressPerformSelectorLeakWarning (
-    return [self performSelector:NSSelectorFromString(@"wel_tintColor")];
+                                           return [self performSelector:NSSelectorFromString(@"wel_tintColor")];
                                            );
     
 }
@@ -124,34 +166,4 @@ UIColor* wel_tintColor(id self, SEL _cmd) {
     objc_setAssociatedObject([self class], @"wel_statusbarIconColor", color, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [[UIApplication sharedApplication].keyWindow.rootViewController setNeedsStatusBarAppearanceUpdate];
 }
-
-
-@end
-
-
-@interface UIViewController (StatusBarColor)
-@end
-@interface UINavigationController (StatusBarColor)
-@end
-
-
-@implementation UIViewController (StatusBarColor)
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    
-    NSInteger style = [objc_getAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle") integerValue];
-    
-    objc_setAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle", @(!style), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    return  style ? 1: 0;
-}
-
-@end
-
-@implementation UINavigationController (StatusBarColor)
-
-- (UIViewController *)childViewControllerForStatusBarStyle{
-    return self.topViewController;
-}
-
 @end
