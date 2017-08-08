@@ -8,5 +8,5 @@ change your Statusbar Color
 
 ## install with pod
 ```bash
-    pod 'WELCustomStatusbarColor','~>1.0.1'
+    pod 'WELCustomStatusbarColor','~>1.0.2'
 ```
