@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DEA574D1F3AE26100FA53E9 /* WELCustomStatusbarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEA574C1F3AE26100FA53E9 /* WELCustomStatusbarColor.m */; };
 		2DEB660E1F15CA8700F2B477 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB660D1F15CA8700F2B477 /* main.m */; };
 		2DEB66111F15CA8700F2B477 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB66101F15CA8700F2B477 /* AppDelegate.m */; };
 		2DEB66141F15CA8700F2B477 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB66131F15CA8700F2B477 /* ViewController.m */; };
 		2DEB66171F15CA8700F2B477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB66151F15CA8700F2B477 /* Main.storyboard */; };
 		2DEB66191F15CA8700F2B477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB66181F15CA8700F2B477 /* Assets.xcassets */; };
 		2DEB661C1F15CA8700F2B477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEB661A1F15CA8700F2B477 /* LaunchScreen.storyboard */; };
-		2DEB662A1F15F85700F2B477 /* WELCustomStatusbarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DEA574B1F3AE26100FA53E9 /* WELCustomStatusbarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WELCustomStatusbarColor.h; sourceTree = "<group>"; };
+		2DEA574C1F3AE26100FA53E9 /* WELCustomStatusbarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WELCustomStatusbarColor.m; sourceTree = "<group>"; };
 		2DEB66091F15CA8700F2B477 /* WELCustomStatusbarColorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WELCustomStatusbarColorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DEB660D1F15CA8700F2B477 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DEB660F1F15CA8700F2B477 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		2DEB66181F15CA8700F2B477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DEB661B1F15CA8700F2B477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DEB661D1F15CA8700F2B477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DEB66281F15F85700F2B477 /* WELCustomStatusbarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WELCustomStatusbarColor.h; sourceTree = "<group>"; };
-		2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WELCustomStatusbarColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DEA574A1F3AE26100FA53E9 /* WELCustomStatusbarColor */ = {
+			isa = PBXGroup;
+			children = (
+				2DEA574B1F3AE26100FA53E9 /* WELCustomStatusbarColor.h */,
+				2DEA574C1F3AE26100FA53E9 /* WELCustomStatusbarColor.m */,
+			);
+			path = WELCustomStatusbarColor;
+			sourceTree = "<group>";
+		};
 		2DEB66001F15CA8700F2B477 = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +70,7 @@
 		2DEB660B1F15CA8700F2B477 /* WELCustomStatusbarColorDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2DEB66271F15F85700F2B477 /* WELCustomStatusbarColor */,
+				2DEA574A1F3AE26100FA53E9 /* WELCustomStatusbarColor */,
 				2DEB660F1F15CA8700F2B477 /* AppDelegate.h */,
 				2DEB66101F15CA8700F2B477 /* AppDelegate.m */,
 				2DEB66121F15CA8700F2B477 /* ViewController.h */,
@@ -81,15 +90,6 @@
 				2DEB660D1F15CA8700F2B477 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2DEB66271F15F85700F2B477 /* WELCustomStatusbarColor */ = {
-			isa = PBXGroup;
-			children = (
-				2DEB66281F15F85700F2B477 /* WELCustomStatusbarColor.h */,
-				2DEB66291F15F85700F2B477 /* WELCustomStatusbarColor.m */,
-			);
-			path = WELCustomStatusbarColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +166,7 @@
 				2DEB66141F15CA8700F2B477 /* ViewController.m in Sources */,
 				2DEB66111F15CA8700F2B477 /* AppDelegate.m in Sources */,
 				2DEB660E1F15CA8700F2B477 /* main.m in Sources */,
-				2DEB662A1F15F85700F2B477 /* WELCustomStatusbarColor.m in Sources */,
+				2DEA574D1F3AE26100FA53E9 /* WELCustomStatusbarColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
