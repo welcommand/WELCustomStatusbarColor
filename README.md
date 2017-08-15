@@ -8,5 +8,16 @@ change your Statusbar Color
 
 ## install with pod
 ```bash
-    pod 'WELCustomStatusbarColor','~>1.0.4'
+    pod 'WELCustomStatusbarColor','~>1.0.5'
 ```
+
+## How To Use
+
+first you should remove these method from you project
+
+```bash
+    -[UIViewController preferredStatusBarStyle]
+    -[UINavigationController childViewControllerForStatusBarStyle]
+```
+
+than you can call +[WELCustomStatusbarColor updateStatusbarIconColor:] everywhere
