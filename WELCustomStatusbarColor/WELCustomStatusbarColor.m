@@ -18,46 +18,9 @@ _Pragma("clang diagnostic pop") \
 } while (0)
 
 
-UIStatusBarStyle wel_preferredStatusBarStyle(id self, SEL _cmd) {
-    return  [objc_getAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle") integerValue];
-}
-
-UIViewController* wel_childViewControllerForStatusBarStyle(id self, SEL _cmd)  {
-    return [self performSelector:@selector(topViewController)];
-}
-
 __attribute__((constructor))
 static void resetPreferredStatusBarStyle(void) {
-    
     [[NSBundle mainBundle].infoDictionary setValue:@(YES) forKey:@"UIViewControllerBasedStatusBarAppearance"];
-    
-    
-    int numClasses;
-    Class *classes = NULL;
-    numClasses = objc_getClassList(NULL,0);
-    
-    if (numClasses >0)
-    {
-        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
-        numClasses = objc_getClassList(classes, numClasses);
-        for (int i = 0; i < numClasses; i++) {
-            Class cls = classes[i];
-            while ((cls = class_getSuperclass(cls))) {
-                if (cls == [UINavigationController class]) {
-                    Method tm = class_getInstanceMethod(classes[i], @selector(childViewControllerForStatusBarStyle));
-                    if (tm) {
-                        method_setImplementation(tm, (IMP)wel_childViewControllerForStatusBarStyle);
-                    }
-                } else if (cls == [UIViewController class]) {
-                    Method tm = class_getInstanceMethod(classes[i], @selector(preferredStatusBarStyle));
-                    if (tm) {
-                        method_setImplementation(tm, (IMP)wel_preferredStatusBarStyle);
-                    }
-                }
-            }
-        }
-        free(classes);
-    }
 }
 
 @interface UIImage (WELStatusbarIconColor)
@@ -188,3 +151,26 @@ void wel_setStatusBarStyle(id self, SEL _cmd, NSInteger arg1, id arg2) {
     [[UIApplication sharedApplication].keyWindow.rootViewController setNeedsStatusBarAppearanceUpdate];
 }
 @end
+
+
+@interface UIViewController (StatusBarColor)
+@end
+@interface UINavigationController (StatusBarColor)
+@end
+
+@implementation UIViewController (StatusBarColor)
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return  [objc_getAssociatedObject([UIViewController class], @"wel_preferredStatusBarStyle") integerValue];
+}
+
+@end
+
+@implementation UINavigationController (StatusBarColor)
+
+- (UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
+}
+
+@end
+
